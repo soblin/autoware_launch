@@ -9,6 +9,7 @@
 
       enable_avoidance_over_same_direction: true
       enable_avoidance_over_opposite_direction: true
+      enable_update_path_when_object_is_gone: false
 
       # For target object filtering
       threshold_speed_object_is_stopped: 3.0      # [m/s]
