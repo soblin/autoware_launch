@@ -9,6 +9,7 @@
 
       enable_avoidance_over_same_direction: true
       enable_avoidance_over_opposite_direction: true
+      enable_update_path_when_object_is_gone: false
 
       # For target object filtering
       threshold_speed_object_is_stopped: 3.0      # [m/s]
@@ -59,6 +60,8 @@
       # not enabled yet
       longitudinal_collision_margin_min_distance: 0.0          # [m]
       longitudinal_collision_margin_time: 0.0
+
+      turn_signal_on_swerving: true # turn signal on while swerving
 
       # avoidance is performed for the object type with true
       target_object:
