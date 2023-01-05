@@ -13,3 +13,9 @@
               path: storage_error
               contains: ["bagpacker"]
               timeout: 3.0
+
+        service_log_checker:
+          type: diagnostic_aggregator/GenericAnalyzer
+          path: service_log_checker
+          contains: ["service_log_checker"]
+          timeout: 5.0
