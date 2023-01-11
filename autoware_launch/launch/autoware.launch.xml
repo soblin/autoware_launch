@@ -99,6 +99,8 @@
       <!-- options for lateral_controller_mode: mpc, pure_pursuit -->
       <arg name="lateral_controller_mode" value="mpc"/>
       <arg name="longitudinal_controller_mode" value="pid"/>
+      <!-- Options for external emergency stop module. Heartbeat topic is required if this is true. -->
+      <arg name="check_external_emergency_heartbeat" value="false" />
       <arg name="use_multithread" value="true" />
     </include>
   </group>
