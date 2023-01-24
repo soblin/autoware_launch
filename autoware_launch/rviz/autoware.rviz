@@ -20,6 +20,8 @@ Panels:
     Name: InitialPoseButtonPanel
   - Class: AutowareDateTimePanel
     Name: AutowareDateTimePanel
+  - Class: rviz_plugins::AutowareStatePanel
+    Name: AutowareStatePanel
 Preferences:
   PromptSaveOnExit: true
 Toolbars:
