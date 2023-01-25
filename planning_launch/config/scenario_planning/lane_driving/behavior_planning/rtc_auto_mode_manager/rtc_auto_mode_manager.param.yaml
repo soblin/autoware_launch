@@ -6,6 +6,8 @@
       - "detection_area"
       - "intersection"
       - "traffic_light"
+      - "ext_request_lane_change_left"
+      - "ext_request_lane_change_right"
       - "lane_change_left"
       - "lane_change_right"
       - "avoidance_left"

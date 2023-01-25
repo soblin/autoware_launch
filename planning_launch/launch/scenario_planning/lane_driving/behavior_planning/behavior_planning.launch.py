@@ -499,7 +499,10 @@ def generate_launch_description():
 
     set_bt_tree_config_path_with_foa = SetLaunchConfiguration(
         "bt_tree_config_path",
-        [FindPackageShare("behavior_path_planner"), "/config/behavior_path_planner_tree.xml"],
+        [
+            FindPackageShare("behavior_path_planner"),
+            "/config/behavior_path_planner_tree_with_external_request_LC.xml",
+        ],
         condition=UnlessCondition(LaunchConfiguration("disuse_foa")),
     )
 
