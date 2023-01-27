@@ -7,6 +7,7 @@
   <arg name="pointcloud_container_name"/>
   <arg name="cruise_planner_type"/>
   <arg name="disuse_foa" />
+  <arg name="use_external_lc" />
   <arg name="use_perfect_lane_change" />
 
   <!-- lane_driving scenario -->

@@ -1,5 +1,6 @@
 <launch>
   <arg name="use_foa" default="false" />
+  <arg name="use_external_lc" default="true" />
   <arg name="use_perfect_lane_change" default="true" />
 
   <!-- planning module -->
@@ -28,6 +29,7 @@
         <arg name="pointcloud_container_name" value="$(var pointcloud_container_name)"/>
         <arg name="cruise_planner_type" value="$(var cruise_planner_type)" />
         <arg name="disuse_foa" value="$(var disuse_foa)" />
+        <arg name="use_external_lc" value="$(var use_external_lc)" />
         <arg name="use_perfect_lane_change" value="$(var use_perfect_lane_change)" />
       </include>
     </group>

@@ -20,6 +20,7 @@
   <arg name="sensing/visible_range" default="300.0" description="visible range when using dummy perception"/>
   <arg name="scenario_simulation" default="false" description="use scenario simulation"/>
   <arg name="use_foa" default="false" />
+  <arg name="use_external_lc" default="true"/>
   <arg name="use_perfect_lane_change" default="true" />
   <!-- Optional parameters for vcu emulation -->
   <arg name="vehicle_simulation" default="true" description="use vehicle simulation"/>
@@ -64,6 +65,7 @@
     <include file="$(find-pkg-share planning_launch)/launch/planning.launch.xml">
       <arg name="cruise_planner_type" value="$(var cruise_planner_type)"/>
       <arg name="use_foa" value="$(var use_foa)" />
+      <arg name="use_external_lc" value="$(var use_external_lc)" />
       <arg name="use_perfect_lane_change" value="$(var use_perfect_lane_change)" />
     </include>
   </group>

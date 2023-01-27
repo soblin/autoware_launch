@@ -8,6 +8,7 @@
   <arg name="pointcloud_container_name"/>
   <arg name="cruise_planner_type"/>
   <arg name="disuse_foa" />
+  <arg name="use_external_lc" />
   <arg name="use_perfect_lane_change" />
 
   <!-- scenario selector -->
@@ -52,6 +53,7 @@
       <arg name="pointcloud_container_name" value="$(var pointcloud_container_name)"/>
       <arg name="cruise_planner_type" value="$(var cruise_planner_type)" />
       <arg name="disuse_foa" value="$(var disuse_foa)" />
+      <arg name="use_external_lc" value="$(var use_external_lc)" />
       <arg name="use_perfect_lane_change" value="$(var use_perfect_lane_change)" />
     </include>
     <!-- parking -->
