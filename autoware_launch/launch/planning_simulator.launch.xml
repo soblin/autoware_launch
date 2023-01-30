@@ -20,7 +20,7 @@
   <arg name="sensing/visible_range" default="300.0" description="visible range when using dummy perception"/>
   <arg name="scenario_simulation" default="false" description="use scenario simulation"/>
   <arg name="use_foa" default="false" />
-  <arg name="use_external_lc" default="true"/>
+  <arg name="use_external_lc" default="false"/>
   <arg name="use_perfect_lane_change" default="true" />
   <!-- Optional parameters for vcu emulation -->
   <arg name="vehicle_simulation" default="true" description="use vehicle simulation"/>
@@ -91,14 +91,7 @@
   <!-- Tools -->
   <group>
     <!-- Rviz -->
-    <node
-      pkg="rviz2"
-      exec="rviz2"
-      name="rviz2"
-      output="screen"
-      args="-d $(var rviz_config) -s $(find-pkg-share autoware_launch)/rviz/image/autoware.png"
-      if="$(var rviz)"
-    />
+    <node pkg="rviz2" exec="rviz2" name="rviz2" output="screen" args="-d $(var rviz_config) -s $(find-pkg-share autoware_launch)/rviz/image/autoware.png" if="$(var rviz)" />
     <include file="$(find-pkg-share ad_api_adaptors)/launch/rviz_adaptors.launch.xml" if="$(var rviz)"/>
   </group>
 
