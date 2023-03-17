@@ -47,5 +47,10 @@
       <include file="$(find-pkg-share planning_debug_tools)/launch/stop_reason_visualizer.launch.xml">
       </include>
     </group>
+
+    <!-- planning evaluator -->
+    <group>
+      <include file="$(find-pkg-share planning_evaluator)/launch/planning_evaluator.launch.xml"/>
+    </group>
   </group>
 </launch>

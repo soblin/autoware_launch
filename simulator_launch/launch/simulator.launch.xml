@@ -2,6 +2,8 @@
   <arg name="launch_dummy_perception" />
   <arg name="launch_dummy_vehicle"/>
   <arg name="launch_dummy_localization"/>
+  <arg name="launch_planning_evaluator"/>
+  <arg name="launch_diagnostic_converter"/>
 
   <arg name="perception/enable_detection_failure" default="true" description="enable to simulate detection failure when using dummy perception"/>
   <arg name="perception/enable_object_recognition" default="false" description="enable object recognition"/>
@@ -82,6 +84,13 @@
       <arg name="ndt_enabled" value="false"/>
       <arg name="stop_check_enabled" value="false"/>
     </include>
+  </group>
+
+  <!-- Diagnostic Converter -->
+  <group if="$(var launch_diagnostic_converter)">
+    <node name="diagnostic_converter" exec="diagnostic_converter" pkg="diagnostic_converter" output="screen">
+      <param name="diagnostic_topics" value="[/diagnostic/planning_evaluator/metrics]"/>
+    </node>
   </group>
 
   <!-- Simulator model -->
