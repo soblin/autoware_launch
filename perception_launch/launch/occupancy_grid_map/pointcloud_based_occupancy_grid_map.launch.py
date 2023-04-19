@@ -12,8 +12,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
 from launch.actions import DeclareLaunchArgument
+from launch.actions import OpaqueFunction
 from launch.actions import SetLaunchConfiguration
 from launch.conditions import IfCondition
 from launch.conditions import UnlessCondition
@@ -21,22 +23,29 @@ from launch.substitutions import LaunchConfiguration
 from launch_ros.actions import ComposableNodeContainer
 from launch_ros.actions import LoadComposableNodes
 from launch_ros.descriptions import ComposableNode
+import yaml
 
 
-def generate_launch_description():
-    def add_launch_arg(name: str, default_value=None):
-        return DeclareLaunchArgument(name, default_value=default_value)
+def overwrite_config(param_dict, launch_config_name, node_params_name, context):
+    if LaunchConfiguration(launch_config_name).perform(context) != "":
+        param_dict[node_params_name] = LaunchConfiguration(launch_config_name).perform(context)
 
-    set_container_executable = SetLaunchConfiguration(
-        "container_executable",
-        "component_container",
-        condition=UnlessCondition(LaunchConfiguration("use_multithread")),
+
+def launch_setup(context, *args, **kwargs):
+    # load parameter files
+    param_file = LaunchConfiguration("param_file").perform(context)
+    with open(param_file, "r") as f:
+        pointcloud_based_occupancy_grid_map_node_params = yaml.safe_load(f)["/**"][
+            "ros__parameters"
+        ]
+    overwrite_config(
+        pointcloud_based_occupancy_grid_map_node_params,
+        "map_origin",
+        "gridmap_origin_frame",
+        context,
     )
-
-    set_container_mt_executable = SetLaunchConfiguration(
-        "container_executable",
-        "component_container_mt",
-        condition=IfCondition(LaunchConfiguration("use_multithread")),
+    overwrite_config(
+        pointcloud_based_occupancy_grid_map_node_params, "scan_origin", "scan_origin_frame", context
     )
 
     composable_nodes = [
@@ -49,12 +58,7 @@ def generate_launch_description():
                 ("~/input/raw_pointcloud", LaunchConfiguration("input/raw_pointcloud")),
                 ("~/output/occupancy_grid_map", LaunchConfiguration("output")),
             ],
-            parameters=[
-                {
-                    "map_resolution": 0.5,
-                    "use_height_filter": True,
-                }
-            ],
+            parameters=[pointcloud_based_occupancy_grid_map_node_params],
             extra_arguments=[{"use_intra_process_comms": LaunchConfiguration("use_intra_process")}],
         ),
     ]
@@ -75,18 +79,43 @@ def generate_launch_description():
         condition=IfCondition(LaunchConfiguration("use_pointcloud_container")),
     )
 
+    return [occupancy_grid_map_container, load_composable_nodes]
+
+
+def generate_launch_description():
+    def add_launch_arg(name: str, default_value=None):
+        return DeclareLaunchArgument(name, default_value=default_value)
+
+    set_container_executable = SetLaunchConfiguration(
+        "container_executable",
+        "component_container",
+        condition=UnlessCondition(LaunchConfiguration("use_multithread")),
+    )
+
+    set_container_mt_executable = SetLaunchConfiguration(
+        "container_executable",
+        "component_container_mt",
+        condition=IfCondition(LaunchConfiguration("use_multithread")),
+    )
+
     return LaunchDescription(
         [
-            add_launch_arg("use_multithread", "False"),
-            add_launch_arg("use_intra_process", "True"),
-            add_launch_arg("use_pointcloud_container", "False"),
+            add_launch_arg("use_multithread", "false"),
+            add_launch_arg("use_intra_process", "true"),
+            add_launch_arg("use_pointcloud_container", "false"),
             add_launch_arg("container_name", "occupancy_grid_map_container"),
             add_launch_arg("input/obstacle_pointcloud", "no_ground/oneshot/pointcloud"),
             add_launch_arg("input/raw_pointcloud", "concatenated/pointcloud"),
             add_launch_arg("output", "occupancy_grid"),
+            add_launch_arg(
+                "param_file",
+                get_package_share_directory("perception_launch")
+                + "/config/occupancy_grid_map/pointcloud_based_occupancy_grid_map.param.yaml",
+            ),
+            add_launch_arg("map_origin", ""),
+            add_launch_arg("scan_origin", ""),
             set_container_executable,
             set_container_mt_executable,
-            occupancy_grid_map_container,
-            load_composable_nodes,
         ]
+        + [OpaqueFunction(function=launch_setup)]
     )
