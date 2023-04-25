@@ -32,6 +32,7 @@
         enable: false
         occlusion_detection_area_length: 70.0 # [m]
         occlusion_creep_velocity: 0.8333 # the creep velocity to occlusion limit stop line
+        peeking_offset: -0.1 # [m] offset for peeking into detection area
         free_space_max: 43
         occupied_min: 58
         do_dp: true
