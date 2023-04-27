@@ -3,7 +3,13 @@ Panels:
     Help Height: 0
     Name: Displays
     Property Tree Widget:
-      Expanded: ~
+      Expanded:
+        - /Sensing1/LiDAR1/ConcatenatePointCloud1/Autocompute Value Bounds1
+        - /Planning1
+        - /Planning1/ScenarioPlanning1
+        - /Planning1/ScenarioPlanning1/LaneDriving1
+        - /Planning1/ScenarioPlanning1/LaneDriving1/BehaviorPlanning1
+        - /Planning1/ScenarioPlanning1/LaneDriving1/BehaviorPlanning1/DebugMarker1
       Splitter Ratio: 0.557669460773468
     Tree Height: 397
   - Class: rviz_common/Selection
