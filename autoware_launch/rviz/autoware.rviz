@@ -366,7 +366,7 @@ Visualization Manager:
             crosswalk_lanelets: true
             lane_start_bound: false
             lanelet direction: true
-            lanelet_id: false
+            lanelet_id: true
             left_lane_bound: true
             parking_lots: true
             parking_space: true
