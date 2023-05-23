@@ -29,7 +29,7 @@
         keep_detection_vel_thr: 0.833 # == 3.0km/h. keep detection if ego is ego.vel < keep_detection_vel_thr
 
       occlusion:
-        enable: false
+        enable: true
         occlusion_detection_area_length: 70.0 # [m]
         occlusion_creep_velocity: 0.8333 # the creep velocity to occlusion limit stop line
         peeking_offset: -0.1 # [m] offset for peeking into detection area
@@ -39,6 +39,7 @@
         before_creep_stop_time: 1.0 # [s]
         min_vehicle_brake_for_rss: -2.5 # [m/s^2]
         max_vehicle_velocity_for_rss: 16.66 # [m/s] == 60kmph
+        denoise_kernel: 2.5 # [m]
 
     merge_from_private:
       stop_duration_sec: 1.0
