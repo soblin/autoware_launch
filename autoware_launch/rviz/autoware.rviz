@@ -2540,7 +2540,9 @@ Visualization Manager:
         Reliability Policy: Reliable
         Value: /rviz/routing/rough_goal
     - Class: rviz_plugins/PedestrianInitialPoseTool
+      Interactive: true
       Pose Topic: /simulation/dummy_perception_publisher/object_info
+      Target Frame: <Fixed Frame>
       Theta std deviation: 0.0872664600610733
       Velocity: 0
       X std deviation: 0.029999999329447746
@@ -2548,7 +2550,9 @@ Visualization Manager:
       Z position: 1
       Z std deviation: 0.029999999329447746
     - Class: rviz_plugins/CarInitialPoseTool
+      Interactive: true
       Pose Topic: /simulation/dummy_perception_publisher/object_info
+      Target Frame: <Fixed Frame>
       Theta std deviation: 0.0872664600610733
       Velocity: 3
       X std deviation: 0.029999999329447746
@@ -2556,7 +2560,9 @@ Visualization Manager:
       Z position: 0
       Z std deviation: 0.029999999329447746
     - Class: rviz_plugins/BusInitialPoseTool
+      Interactive: true
       Pose Topic: /simulation/dummy_perception_publisher/object_info
+      Target Frame: <Fixed Frame>
       Theta std deviation: 0.0872664600610733
       Velocity: 0
       X std deviation: 0.029999999329447746
