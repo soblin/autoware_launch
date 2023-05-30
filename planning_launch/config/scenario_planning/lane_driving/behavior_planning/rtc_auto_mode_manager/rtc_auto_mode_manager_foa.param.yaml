@@ -18,3 +18,5 @@
 
     default_enable_list:
       - "blind_spot"
+      - "crosswalk"
+      - "traffic_light"
