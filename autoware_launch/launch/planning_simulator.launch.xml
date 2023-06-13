@@ -61,6 +61,7 @@
       <arg name="use_experimental_lane_change_function" value="$(var use_experimental_lane_change_function)"/>
       <!-- Others -->
       <arg name="use_foa" value="$(var use_foa)"/>
+      <arg name="scenario_simulation" value="$(var scenario_simulation)"/>
     </include>
   </group>
 
