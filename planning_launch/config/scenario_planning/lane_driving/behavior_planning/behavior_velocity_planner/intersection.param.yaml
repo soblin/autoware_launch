@@ -25,7 +25,7 @@
         min_predicted_path_confidence: 0.05
         minimum_ego_predicted_velocity: 1.388 # [m/s]
         collision_start_margin_time: 4.0 # [s] this + state_transit_margin_time should be higher to account for collision with fast/accelerating object
-        collision_end_margin_time: 6.0 # [s] this + state_transit_margin_time should be higher to account for collision with slow/decelerating object
+       collision_end_margin_time: 6.0 # [s] this + state_transit_margin_time should be higher to account for collision with slow/decelerating object
         keep_detection_vel_thr: 0.833 # == 3.0km/h. keep detection if ego is ego.vel < keep_detection_vel_thr
 
       occlusion:
@@ -40,7 +40,7 @@
         before_creep_stop_time: 0.1 # [s]
         min_vehicle_brake_for_rss: -2.5 # [m/s^2]
         max_vehicle_velocity_for_rss: 16.66 # [m/s] == 60kmph
-        denoise_kernel: 1.5 # [m]
+        denoise_kernel: 1.2 # [m]
         pub_debug_grid: false
 
     merge_from_private:
