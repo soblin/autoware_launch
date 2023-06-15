@@ -20,3 +20,5 @@
       - "blind_spot"
       - "crosswalk"
       - "traffic_light"
+      - "intersection"
+      - "intersection_occlusion"
