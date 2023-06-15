@@ -38,7 +38,7 @@
         occupied_min: 58
         do_dp: true
         before_creep_stop_time: 0.1 # [s]
-        min_vehicle_brake_for_rss: -2.1 # [m/s^2]
+        min_vehicle_brake_for_rss: -2.5 # [m/s^2]
         max_vehicle_velocity_for_rss: 16.66 # [m/s] == 60kmph
         denoise_kernel: 0.9 # [m]
         pub_debug_grid: true
