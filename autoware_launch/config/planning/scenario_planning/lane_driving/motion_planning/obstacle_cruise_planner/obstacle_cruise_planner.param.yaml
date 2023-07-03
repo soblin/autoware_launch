@@ -6,7 +6,7 @@
       enable_debug_info: false
       enable_calculation_time_info: false
 
-      enable_slow_down_planning: false
+      enable_slow_down_planning: true
 
       # longitudinal info
       idling_time: 2.0 # idling time to detect front vehicle starting deceleration [s]
@@ -51,7 +51,7 @@
           pedestrian: false
 
       slow_down_obstacle_type:
-        unknown: true
+        unknown: false
         car: true
         truck: true
         bus: true
@@ -95,6 +95,9 @@
       slow_down:
         max_lat_margin: 1.1  # lateral margin between obstacle and trajectory band with ego's width
         lat_hysteresis_margin: 0.2
+
+        successive_num_to_entry_slow_down_condition: 5
+        successive_num_to_exit_slow_down_condition: 5
 
     cruise:
       pid_based_planner:
@@ -162,10 +165,10 @@
 
     slow_down:
       # parameters to calculate slow down velocity by linear interpolation
-      min_lat_margin: 0.2
+      min_lat_margin: 0.6
       max_lat_margin: 1.0
-      min_ego_velocity: 2.0
-      max_ego_velocity: 8.0
+      min_ego_velocity: 1.5
+      max_ego_velocity: 6.0
 
       time_margin_on_target_velocity: 1.5 # [s]
 
