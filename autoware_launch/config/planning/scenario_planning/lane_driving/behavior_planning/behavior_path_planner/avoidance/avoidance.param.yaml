@@ -38,7 +38,7 @@
           safety_buffer_longitudinal: 0.0              # [m]
         truck:
           enable: true
-          moving_speed_threshold: 1.0                  # 3.6km/h
+          moving_speed_threshold: 2.0                  # 7.2km/h
           moving_time_threshold: 2.0
           max_expand_ratio: 0.0
           envelope_buffer_margin: 0.5
@@ -47,7 +47,7 @@
           safety_buffer_longitudinal: 0.0
         bus:
           enable: true
-          moving_speed_threshold: 1.0                  # 3.6km/h
+          moving_speed_threshold: 2.0                  # 7.2km/h
           moving_time_threshold: 2.0
           max_expand_ratio: 0.0
           envelope_buffer_margin: 0.5
@@ -56,7 +56,7 @@
           safety_buffer_longitudinal: 0.0
         trailer:
           enable: true
-          moving_speed_threshold: 1.0                  # 3.6km/h
+          moving_speed_threshold: 2.0                  # 7.2km/h
           moving_time_threshold: 2.0
           max_expand_ratio: 0.0
           envelope_buffer_margin: 0.5
@@ -106,10 +106,10 @@
       target_filtering:
         # filtering moving objects
         threshold_time_force_avoidance_for_stopped_vehicle: 1.0 # [s]
-        # detection range
-        object_ignore_distance_traffic_light: 70.0      # [m]
+        object_ignore_distance_traffic_light: 100.0     # [m]
         object_ignore_distance_crosswalk_forward: 30.0  # [m]
         object_ignore_distance_crosswalk_backward: 30.0 # [m]
+        # detection range
         object_check_forward_distance: 150.0            # [m]
         object_check_backward_distance: 10.0            # [m]
         object_check_goal_distance: 20.0                # [m]
