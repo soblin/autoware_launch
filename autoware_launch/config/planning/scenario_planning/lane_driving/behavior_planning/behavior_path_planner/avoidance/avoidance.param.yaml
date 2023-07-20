@@ -171,7 +171,7 @@
         longitudinal:
           nominal_deceleration: -1.0                    # [m/ss]
           nominal_jerk: 0.5                             # [m/sss]
-          max_deceleration: -2.0                        # [m/ss]
+          max_deceleration: -1.5                        # [m/ss]
           max_jerk: 1.0
           # For prevention of large acceleration while avoidance
           min_avoidance_speed_for_acc_prevention: 3.0   # [m/s]
