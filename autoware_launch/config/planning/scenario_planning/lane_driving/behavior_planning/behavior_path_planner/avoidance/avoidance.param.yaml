@@ -165,7 +165,7 @@
         # lateral constraints
         lateral:
           nominal_lateral_jerk: 0.2                     # [m/s3]
-          max_lateral_jerk: 1.0                         # [m/s3]
+          max_lateral_jerk: 1.5                         # [m/s3]
 
         # longitudinal constraints
         longitudinal:
