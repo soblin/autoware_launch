@@ -41,7 +41,7 @@
 
         /autoware/vehicle/node_alive_monitoring: default
 
-        /autoware/vehicle/awsim: default
+#        /autoware/vehicle/awsim: default
 
       external_control:
         /autoware/control/control_command_gate/node_alive_monitoring: default
