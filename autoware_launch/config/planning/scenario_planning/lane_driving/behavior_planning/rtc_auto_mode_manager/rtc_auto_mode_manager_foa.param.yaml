@@ -16,3 +16,5 @@
 
     default_enable_list:
       - "blind_spot"
+      - "intersection"
+      - "intersection_occlusion"
