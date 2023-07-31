@@ -2,7 +2,7 @@
   ros__parameters:
     intersection:
       common:
-        attention_area_margin: 0.5 # [m]
+        attention_area_margin: 0.75 # [m]
         attention_area_length: 200.0 # [m]
         attention_area_angle_threshold: 0.785 # [rad]
         stop_line_margin: 3.0
@@ -37,7 +37,7 @@
         occlusion_attention_area_length: 70.0 # [m]
         enable_creeping: false # flag to use the creep velocity when reaching occlusion limit stop line
         occlusion_creep_velocity: 0.8333 # the creep velocity to occlusion limit stop line
-        peeking_offset: 0.9 # [m] offset for peeking into detection area
+        peeking_offset: 1.0 # [m] offset for peeking into detection area
         free_space_max: 43
         occupied_min: 58
         do_dp: true
@@ -48,7 +48,7 @@
         pub_debug_grid: false
         possible_object_bbox: [1.0, 2.0] # [m x m]
         first_stop_vel_thr: 0.416 # [m/s]
-        ignore_parked_vehicle_speed_threshold: 0.333 # == 1.2km/h
+        ignore_parked_vehicle_speed_threshold: 0.666 # == 1.2km/h
 
 
     merge_from_private:
