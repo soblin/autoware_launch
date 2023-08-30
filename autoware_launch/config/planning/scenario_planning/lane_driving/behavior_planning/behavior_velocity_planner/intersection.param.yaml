@@ -48,6 +48,8 @@
         possible_object_bbox: [1.5, 2.5] # [m x m]
         first_stop_vel_thr: 0.416 # [m/s]
         ignore_parked_vehicle_speed_threshold: 0.8333 # == 1.2km/h
+        ignore_parked_vehicle_speed_threshold: 0.8333 # == 3.0km/h
+        stop_release_margin_time: 1.5 # [s]
 
 
     merge_from_private:
