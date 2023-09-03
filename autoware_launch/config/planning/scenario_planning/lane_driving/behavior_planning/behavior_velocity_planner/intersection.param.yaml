@@ -38,11 +38,11 @@
         minimum_upstream_velocity: 0.01 # [m/s] minimum velocity to avoid null division for the stop line from the upstream velocity
 
       occlusion:
-        enable: false
+        enable: true
         occlusion_attention_area_length: 70.0 # [m]
         enable_creeping: false # flag to use the creep velocity when reaching occlusion limit stop line
         occlusion_creep_velocity: 0.8333 # the creep velocity to occlusion limit stop line
-        peeking_offset: -0.5 # [m] offset for peeking into detection area
+        peeking_offset: 1.0 # [m] offset for peeking into detection area
         free_space_max: 43
         occupied_min: 58
         do_dp: true
