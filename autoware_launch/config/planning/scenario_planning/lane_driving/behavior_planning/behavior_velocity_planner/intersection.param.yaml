@@ -50,6 +50,7 @@
         ignore_parked_vehicle_speed_threshold: 0.8333 # == 1.2km/h
         ignore_parked_vehicle_speed_threshold: 0.8333 # == 3.0km/h
         stop_release_margin_time: 1.5 # [s]
+        peeking_offset_absence_tl: 3.0 # [m]
 
 
     merge_from_private:
