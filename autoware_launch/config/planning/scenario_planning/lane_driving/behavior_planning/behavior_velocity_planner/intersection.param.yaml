@@ -45,13 +45,13 @@
         max_vehicle_velocity_for_rss: 16.66 # [m/s] == 60kmph
         denoise_kernel: 1.0 # [m]
         pub_debug_grid: false
-        possible_object_bbox: [1.5, 2.5] # [m x m]
+        possible_object_bbox: [2.0, 3.5] # [m x m]
         first_stop_vel_thr: 0.416 # [m/s]
         ignore_parked_vehicle_speed_threshold: 0.8333 # == 1.2km/h
         ignore_parked_vehicle_speed_threshold: 0.8333 # == 3.0km/h
         stop_release_margin_time: 1.5 # [s]
         temporal_stop_before_attention_area: false
-        peeking_offset_absence_tl: 3.0 # [m]
+        peeking_offset_absence_tl: 6.0 # [m]
 
 
     merge_from_private:
